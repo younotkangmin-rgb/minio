@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gacha Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="main-content">
+            <button id="toggle-sidebar" class="toggle-btn">☰</button>
+            <button id="pull-button">Pull Gacha</button>
+            <button id="auto-pull-toggle" class="sort-btn" style="display: none; margin-top: 10px; width: 120px;">AUTO: OFF</button>
+            <div id="result-text" class="result-text"></div>
+            <div id="inventory-panel" class="inventory-panel hidden">
+                <button id="close-inventory" class="close-btn">CLOSE</button>
+                <h2>INVENTORY</h2>
+                <div id="inventory-grid" class="inventory-grid"></div>
+            </div>
+            <div id="collection-panel" class="inventory-panel hidden">
+                <button id="close-collection" class="close-btn">CLOSE</button>
+                <h2>COLLECTION</h2>
+                <div style="font-size: 0.8em; color: #cccccc; margin-bottom: 10px; text-align: center;">
+                    <span style="color: #FF00FF;">■ 신화 (0.05%)</span> | 
+                    <span style="color: #FFD700;">■ 전설 (0.2%)</span> | 
+                    <span style="color: #9B59B6;">■ 영웅 (1%)</span> | 
+                    <span style="color: #3498DB;">■ 희귀 (3%)</span> | 
+                    <span style="color: #2ECC71;">■ 고급 (10%)</span> | 
+                    <span style="color: #95A5A6;">■ 일반</span>
+                </div>
+                <button id="sort-toggle" class="sort-btn">정렬: 희귀도 낮은순</button>
+                <div id="collection-grid" class="inventory-grid"></div>
+            </div>
+            <div id="shop-panel" class="inventory-panel hidden">
+                <button id="close-shop" class="close-btn">CLOSE</button>
+                <h2>SHOP</h2>
+                <div id="craft-grid" class="shop-grid" style="padding: 20px;"></div>
+            </div>
+            <div id="sell-panel" class="inventory-panel hidden">
+                <button id="close-sell" class="close-btn">CLOSE</button>
+                <h2>SELL</h2>
+                <div id="sell-grid" class="shop-grid" style="padding: 20px;"></div>
+            </div>
+        </div>
+        <div class="side-menu">
+            <button class="menu-btn" id="settings-btn">SETTINGS</button>
+            <button class="menu-btn" id="inventory-btn">INVENTORY</button>
+            <button class="menu-btn" id="collection-btn">COLLECTION</button>
+            <button class="menu-btn" id="sell-btn">SELL</button>
+            <button class="menu-btn" id="shop-btn">SHOP</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
