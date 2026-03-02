@@ -1,117 +1,105 @@
 const minerals = [
-    // 신화 등급 (0.05%)
-    { name: '시공의 결정', color: '#FF00FF', rarity: 0.008 },
-    { name: '영원의 파편', color: '#00FFFF', rarity: 0.009 },
-    { name: '우주의 눈물', color: '#FFD700', rarity: 0.01 },
-    { name: '신의 축복석', color: '#FF1493', rarity: 0.011 },
-    { name: '차원의 핵', color: '#00FF00', rarity: 0.012 },
+    // 유강민 등급 (0.00000000000000001%)
+    { name: '유강민', color: '#000000', rarity: 0.00000000000000001 },
     
-    // 전설 등급 (0.2%)
-    { name: '엄청 짱큰 돌', color: '#FFD700', rarity: 0.015 },
-    { name: '엄청 멋있는 돌', color: '#FF6B6B', rarity: 0.017 },
-    { name: '용의 심장석', color: '#DC143C', rarity: 0.018 },
-    { name: '불사조의 깃털석', color: '#FF4500', rarity: 0.019 },
-    { name: '달빛 수정', color: '#E0E0E0', rarity: 0.021 },
-    { name: '태양의 정수', color: '#FFA500', rarity: 0.022 },
-    { name: '별똥별 조각', color: '#FFE4B5', rarity: 0.023 },
-    { name: '심연의 보석', color: '#000080', rarity: 0.024 },
-    { name: '천상의 다이아', color: '#87CEEB', rarity: 0.02 },
-    { name: '무지개 크리스탈', color: '#FF69B4', rarity: 0.021 },
+    // 창조 등급 (0.0000001%)
+    { name: '창조', color: '#FFFFFF', rarity: 0.0000001 },
     
-    // 영웅 등급 (0.8%)
-    { name: '빛나는 사파이어', color: '#1E90FF', rarity: 0.07 },
-    { name: '완벽한 루비', color: '#DC143C', rarity: 0.075 },
-    { name: '투명한 다이아몬드', color: '#B9F2FF', rarity: 0.08 },
-    { name: '신비한 에메랄드', color: '#00C851', rarity: 0.082 },
-    { name: '얼음 수정', color: '#00CED1', rarity: 0.085 },
-    { name: '번개 석영', color: '#FFFF00', rarity: 0.078 },
-    { name: '화염 오팔', color: '#FF6347', rarity: 0.083 },
-    { name: '바람의 보석', color: '#98FB98', rarity: 0.088 },
-    { name: '대지의 핵석', color: '#8B4513', rarity: 0.076 },
-    { name: '암흑 자수정', color: '#4B0082', rarity: 0.083 },
+    // 영겁 등급 (0.00001%)
+    { name: '영겁의 파편 I', color: '#00FF00', rarity: 0.000002 },
+    { name: '영겁의 파편 II', color: '#000000', rarity: 0.000002 },
+    { name: '영겁의 파편 III', color: '#7FFF00', rarity: 0.000002 },
+    { name: '영겁의 파편 IV', color: '#FFFF00', rarity: 0.000002 },
+    { name: '영겁의 파편 V', color: '#32CD32', rarity: 0.000002 },
     
-    // 희귀 등급 (3%)
-    { name: '큰 자수정', color: '#9B59B6', rarity: 0.25 },
-    { name: '반짝이는 토파즈', color: '#F39C12', rarity: 0.28 },
-    { name: '맑은 오팔', color: '#1ABC9C', rarity: 0.32 },
-    { name: '깨끗한 석영', color: '#BDC3C7', rarity: 0.35 },
-    { name: '작은 사파이어', color: '#3498DB', rarity: 0.29 },
-    { name: '푸른 수정', color: '#4169E1', rarity: 0.33 },
-    { name: '붉은 마노', color: '#CD5C5C', rarity: 0.27 },
-    { name: '초록 비취', color: '#2E8B57', rarity: 0.31 },
-    { name: '노란 호박', color: '#DAA520', rarity: 0.26 },
-    { name: '보라 형석', color: '#8A2BE2', rarity: 0.34 },
+    // 무현 등급 (0.0000523%)
+    { name: '노무현', color: '#FF00FF', rarity: 0.0000523 },
     
-    // 고급 등급 (8%)
-    { name: '평범한 자수정', color: '#8E44AD', rarity: 0.75 },
-    { name: '흐린 토파즈', color: '#E67E22', rarity: 0.82 },
-    { name: '작은 에메랄드', color: '#27AE60', rarity: 0.78 },
-    { name: '작은 루비', color: '#E74C3C', rarity: 0.85 },
-    { name: '탁한 오팔', color: '#16A085', rarity: 0.73 },
-    { name: '일반 수정', color: '#95A5A6', rarity: 0.88 },
-    { name: '작은 진주', color: '#F5F5DC', rarity: 0.76 },
-    { name: '산호 조각', color: '#FF7F50', rarity: 0.81 },
-    { name: '청록석', color: '#40E0D0', rarity: 0.79 },
-    { name: '감람석', color: '#9ACD32', rarity: 0.83 },
+    // 초월 단계 (0.001%)
+    { name: '초월의 정수', color: '#FFFFFF', rarity: 0.0005 },
+    { name: '초월의 핵', color: '#000000', rarity: 0.0005 },
     
-    // 일반 등급 (18%)
-    { name: '조약돌', color: '#95A5A6', rarity: 1.65 },
-    { name: '작은 돌', color: '#7F8C8D', rarity: 1.72 },
-    { name: '평범한 석영', color: '#BDC3C7', rarity: 1.85 },
-    { name: '거친 돌', color: '#636E72', rarity: 1.78 },
-    { name: '깨진 석영', color: '#95A5A6', rarity: 1.88 },
-    { name: '회색 돌', color: '#808080', rarity: 1.92 },
-    { name: '강돌', color: '#778899', rarity: 1.68 },
-    { name: '자갈', color: '#696969', rarity: 1.95 },
-    { name: '모래석', color: '#C0C0C0', rarity: 1.82 },
-    { name: '진흙석', color: '#8B7355', rarity: 1.75 },
+    // 크로마틱 등급 (0.006%)
+    { name: '크로마틱 크리스탈', color: '#FF1493', rarity: 0.002 },
+    { name: '크로마틱 에센스', color: '#FF8C00', rarity: 0.002 },
+    { name: '크로마틱 코어', color: '#FFD700', rarity: 0.002 },
     
-    // 흔함 등급 (25%)
-    { name: '엄청 작은 돌', color: '#A9A9A9', rarity: 2.35 },
-    { name: '멋없는 돌', color: '#696969', rarity: 2.48 },
-    { name: '평범한 돌', color: '#778899', rarity: 2.52 },
-    { name: '그냥 돌', color: '#708090', rarity: 2.65 },
-    { name: '흔한 자갈', color: '#A9A9A9', rarity: 2.42 },
-    { name: '길바닥 돌', color: '#808080', rarity: 2.58 },
-    { name: '먼지 덩어리', color: '#D3D3D3', rarity: 2.38 },
-    { name: '부서진 돌', color: '#BEBEBE', rarity: 2.55 },
-    { name: '낡은 석편', color: '#C0C0C0', rarity: 2.45 },
-    { name: '바위 조각', color: '#696969', rarity: 2.62 },
+    // 마스터 등급 (0.01%)
+    { name: '천상의 정수', color: '#87CEEB', rarity: 0.005 },
+    { name: '우주의 핵', color: '#4169E1', rarity: 0.005 },
     
-    // 매우 흔함 (45.05%)
-    { name: '돌멩이', color: '#A9A9A9', rarity: 4.35 },
-    { name: '작은 자갈', color: '#808080', rarity: 4.62 },
-    { name: '모래알', color: '#D3D3D3', rarity: 4.48 },
-    { name: '먼지', color: '#DCDCDC', rarity: 4.75 },
-    { name: '흙덩이', color: '#8B7355', rarity: 4.28 },
-    { name: '깨진 조약돌', color: '#778899', rarity: 4.55 },
-    { name: '이끼 낀 돌', color: '#556B2F', rarity: 4.38 },
-    { name: '젖은 돌', color: '#696969', rarity: 4.68 },
-    { name: '마른 돌', color: '#A9A9A9', rarity: 4.42 },
-    { name: '평범한 모래', color: '#F5DEB3', rarity: 4.54 }
+    // 고귀 등급 (12.5%)
+    { name: '다이아몬드', color: '#B9F2FF', rarity: 2.0 },
+    { name: '루비', color: '#E0115F', rarity: 1.8 },
+    { name: '사파이어', color: '#0F52BA', rarity: 1.6 },
+    { name: '토파즈', color: '#FFC87C', rarity: 1.5 },
+    { name: '자수정', color: '#9966CC', rarity: 1.5 },
+    { name: '탄자나이트', color: '#40E0D0', rarity: 1.4 },
+    { name: '오팔', color: '#A8C3BC', rarity: 1.4 },
+    { name: '호박', color: '#FFBF00', rarity: 1.3 },
+    
+    // 에픽 등급 (6.25%)
+    { name: '흑요석', color: '#1C1C1C', rarity: 0.9 },
+    { name: '월장석', color: '#E8E8E8', rarity: 0.9 },
+    { name: '라피스 라줄리', color: '#2E5090', rarity: 0.9 },
+    { name: '말라카이트', color: '#0BDA51', rarity: 0.9 },
+    { name: '터키석', color: '#30D5C8', rarity: 0.9 },
+    { name: '석류석', color: '#8B0000', rarity: 0.9 },
+    { name: '아쿠아마린', color: '#7FFFD4', rarity: 0.85 },
+    
+    // 전설 등급 (3.125%)
+    { name: '용의 심장석', color: '#FF4500', rarity: 0.8 },
+    { name: '달빛 수정', color: '#E0E0FF', rarity: 0.8 },
+    { name: '태양의 정수', color: '#FFD700', rarity: 0.8 },
+    { name: '별의 파편', color: '#FFFACD', rarity: 0.725 },
+    
+    // 신화 등급 (0.8%)
+    { name: '세계수의 가지', color: '#00FF7F', rarity: 0.27 },
+    { name: '불사조의 깃털', color: '#FF6347', rarity: 0.27 },
+    { name: '신의 눈물', color: '#87CEEB', rarity: 0.26 },
+    
+    // 불멸 등급 (0.1%)
+    { name: '시간의 파편', color: '#8B00FF', rarity: 0.034 },
+    { name: '공허의 심장', color: '#DC143C', rarity: 0.033 },
+    { name: '영원의 불꽃', color: '#FF1493', rarity: 0.033 },
+    
+    // 희귀 등급 (25%)
+    { name: '에메랄드', color: '#50C878', rarity: 7 },
+    { name: '비취', color: '#7CFC00', rarity: 6 },
+    { name: '페리도트', color: '#9ACD32', rarity: 5 },
+    { name: '옥', color: '#00A86B', rarity: 4 },
+    { name: '녹주석', color: '#32CD32', rarity: 3 },
+    
+    // 일반 등급 (50%)
+    { name: '돌', color: '#95A5A6', rarity: 15 },
+    { name: '자갈', color: '#7F8C8D', rarity: 15 },
+    { name: '조약돌', color: '#BDC3C7', rarity: 10 },
+    { name: '화강암', color: '#A9A9A9', rarity: 10 }
 ];
 
 let inventory = [];
-let gold = 10000;
+let gold = 999999999;
 let activeItems = [];
 let autoPullEnabled = false;
+let stats = {
+    playTime: 0,
+    totalPulls: 0,
+    totalMinerals: 0,
+    totalSold: 0,
+    totalGoldEarned: 0,
+    luck: 100,
+    speed: 100
+};
 
 const craftRecipes = [
-    { name: '시간 가속기', effect: '뽑기 속도 2배 빠르게', cost: { '평범한 돌': 50, '조약돌': 30 }, iconClass: 'icon-clock' },
-    { name: '행운의 부적', effect: '희귀 등급 확률 2배', cost: { '큰 자수정': 10, '반짝이는 토파즈': 10 }, iconClass: 'icon-clover' },
-    { name: '황금 나침반', effect: '전설 등급 확률 1.5배', cost: { '빛나는 사파이어': 5, '완벽한 루비': 5 }, iconClass: 'icon-compass' },
-    { name: '신의 축복', effect: '신화 등급 확률 3배', cost: { '용의 심장석': 3, '달빛 수정': 3, '태양의 정수': 3 }, iconClass: 'icon-star' },
-    { name: '천상의 열쇠', effect: '모든 희귀 확률 소폭 증가', cost: { '그냥 돌': 100, '멋없는 돌': 100 }, iconClass: 'icon-key' }
 ];
 
 const goldShopItems = [
-    { name: '자동 뽑기', effect: '1초마다 자동으로 뽑기', price: 500 },
-    { name: '골드 자석', effect: '뽑기할 때마다 골드 1~10G 획득', price: 1000 },
-    { name: '골드 부스터', effect: '판매 가격 2배', price: 1500 },
-    { name: '행운의 주사위', effect: '모든 확률 1.5배', price: 3000 },
-    { name: '시간 왜곡', effect: '뽑기 속도 5배', price: 5000 },
-    { name: '전설의 자석', effect: '전설 이상 확률 3배', price: 10000 },
-    { name: '무한의 축복', effect: '모든 등급 확률 2배', price: 50000 }
+    { name: '자동 뽑기', effect: '1초마다 자동으로 뽑기', price: 5000 },
+    { name: '골드 자석', effect: '뽑기할 때마다 골드 1~10G 획득', price: 10000 },
+    { name: '골드 부스터', effect: 'LUCK +25', price: 25000 },
+    { name: '시간 왜곡', effect: 'SPD +25', price: 75000 },
+    { name: '무하한', effect: 'SPD +500', price: 500000 }
 ];
 
 function getRandomMineral() {
@@ -128,6 +116,7 @@ function getRandomMineral() {
 }
 
 let sortAscending = true;
+let inventorySortAscending = true;
 
 function updateCollectionDisplay() {
     const grid = document.getElementById('collection-grid');
@@ -153,11 +142,19 @@ function updateCollectionDisplay() {
 }
 
 function getRarityClass(rarity) {
-    if (rarity <= 0.05) return 'rarity-mythic';
-    if (rarity <= 0.2) return 'rarity-legendary';
-    if (rarity <= 1) return 'rarity-epic';
-    if (rarity <= 3) return 'rarity-rare';
-    if (rarity <= 10) return 'rarity-uncommon';
+    if (rarity < 0.0000000001) return 'rarity-yukangmin';
+    if (rarity < 0.000001) return 'rarity-creation';
+    if (rarity < 0.00001) return 'rarity-eternity';
+    if (rarity < 0.0001) return 'rarity-infinite';
+    if (rarity < 0.001) return 'rarity-transcendence';
+    if (rarity < 0.005) return 'rarity-chromatic';
+    if (rarity < 0.01) return 'rarity-master';
+    if (rarity < 0.1) return 'rarity-transcendent';
+    if (rarity < 0.3) return 'rarity-mythic';
+    if (rarity < 0.85) return 'rarity-legendary';
+    if (rarity < 1.0) return 'rarity-epic';
+    if (rarity <= 2.0) return 'rarity-noble';
+    if (rarity <= 7) return 'rarity-uncommon';
     return 'rarity-common';
 }
 
@@ -174,16 +171,19 @@ function updateInventoryDisplay() {
         mineralCount[key].count++;
     });
     
+    const sortedMinerals = Object.values(mineralCount).sort((a, b) => {
+        return inventorySortAscending ? a.mineral.rarity - b.mineral.rarity : b.mineral.rarity - a.mineral.rarity;
+    });
+    
     let index = 0;
-    for (let key in mineralCount) {
+    sortedMinerals.forEach(data => {
         const slot = document.createElement('div');
-        slot.className = 'inventory-slot ' + getRarityClass(mineralCount[key].mineral.rarity);
-        const data = mineralCount[key];
+        slot.className = 'inventory-slot ' + getRarityClass(data.mineral.rarity);
         slot.textContent = data.mineral.name + ' x' + data.count + '\n(' + data.mineral.rarity + '%)';
         slot.style.color = data.mineral.color;
         grid.appendChild(slot);
         index++;
-    }
+    });
     
     for (let i = index; i < 400; i++) {
         const slot = document.createElement('div');
@@ -230,8 +230,13 @@ document.getElementById('pull-button').addEventListener('click', function() {
     
     button.disabled = true;
     
+    let currentSpeed = 100;
+    if (activeItems.some(item => item.name === '시간 왜곡')) currentSpeed += 25;
+    if (activeItems.some(item => item.name === '무하한')) currentSpeed += 500;
+    const speedMultiplier = currentSpeed / 100;
+    
     let count = 0;
-    let delay = 50;
+    let delay = 50 / speedMultiplier;
     
     function spin() {
         const randomMineral = minerals[Math.floor(Math.random() * minerals.length)];
@@ -242,13 +247,26 @@ document.getElementById('pull-button').addEventListener('click', function() {
         resultText.classList.add('shake');
         
         count++;
-        delay += 30;
+        delay += 30 / speedMultiplier;
         
         if (count < 15) {
             setTimeout(spin, delay);
         } else {
             const finalMineral = getRandomMineral();
-            resultText.textContent = finalMineral.name + ' -- ' + finalMineral.rarity + '%';
+            let resultString = finalMineral.name + ' -- ' + finalMineral.rarity + '%';
+            
+            const hasGoldMagnet = activeItems.some(item => item.name === '골드 자석');
+            console.log('골드 자석 보유:', hasGoldMagnet, 'activeItems:', activeItems);
+            
+            if (hasGoldMagnet) {
+                const goldGain = Math.floor(Math.random() * 10) + 1;
+                gold += goldGain;
+                stats.totalGoldEarned += goldGain;
+                resultString += '\n+' + goldGain + 'G';
+                console.log('골드 획득:', goldGain, '총 골드:', gold);
+            }
+            
+            resultText.textContent = resultString;
             resultText.style.color = finalMineral.color;
             resultText.classList.remove('shake');
             void resultText.offsetWidth;
@@ -256,10 +274,17 @@ document.getElementById('pull-button').addEventListener('click', function() {
             createParticles(finalMineral.color);
             
             inventory.push(finalMineral);
+            stats.totalPulls++;
+            stats.totalMinerals++;
             
-            if (activeItems.some(item => item.name === '골드 자석')) {
-                const goldGain = Math.floor(Math.random() * 10) + 1;
-                gold += goldGain;
+            if (!document.getElementById('inventory-panel').classList.contains('hidden')) {
+                updateInventoryDisplay();
+            }
+            if (!document.getElementById('stats-panel').classList.contains('hidden')) {
+                updateStatsDisplay();
+            }
+            if (!document.getElementById('sell-panel').classList.contains('hidden')) {
+                updateSellDisplay();
             }
             
             button.disabled = false;
@@ -305,6 +330,12 @@ document.getElementById('sort-toggle').addEventListener('click', function() {
     updateCollectionDisplay();
 });
 
+document.getElementById('inventory-sort-toggle').addEventListener('click', function() {
+    inventorySortAscending = !inventorySortAscending;
+    this.textContent = inventorySortAscending ? '정렬: 희귀도 낮은순' : '정렬: 희귀도 높은순';
+    updateInventoryDisplay();
+});
+
 document.getElementById('sell-btn').addEventListener('click', function() {
     updateSellDisplay();
     document.getElementById('sell-panel').classList.remove('hidden');
@@ -336,20 +367,65 @@ function updateSellDisplay() {
         mineralCount[key].count++;
     });
     
+    let currentLuck = 100;
+    if (activeItems.some(item => item.name === '골드 부스터')) currentLuck += 25;
+    const luckMultiplier = currentLuck / 100;
+    
     for (let key in mineralCount) {
         const data = mineralCount[key];
-        const sellPrice = Math.floor(data.mineral.rarity * 10);
+        let sellPrice;
+        
+        // 등급별 판매가 설정
+        if (data.mineral.rarity < 0.0000000001) sellPrice = 100000000000000000; // 유강민
+        else if (data.mineral.rarity < 0.000001) sellPrice = 572013700; // 창조
+        else if (data.mineral.rarity < 0.00001) sellPrice = 10000000; // 영겁
+        else if (data.mineral.rarity < 0.0001) sellPrice = 5230000; // 무현
+        else if (data.mineral.rarity < 0.001) sellPrice = 1000000; // 초월
+        else if (data.mineral.rarity < 0.005) sellPrice = 500000; // 크로마틱
+        else if (data.mineral.rarity < 0.01) sellPrice = 100000; // 마스터
+        else if (data.mineral.rarity < 0.1) sellPrice = 50000; // 불멸
+        else if (data.mineral.rarity < 0.3) sellPrice = 10000; // 신화
+        else if (data.mineral.rarity < 0.85) sellPrice = 5000; // 전설
+        else if (data.mineral.rarity < 1.0) sellPrice = 1000; // 에픽
+        else if (data.mineral.rarity <= 2.0) sellPrice = 500; // 고귀
+        else if (data.mineral.rarity <= 7) sellPrice = 100; // 희귀
+        else sellPrice = 10; // 일반
+        
+        sellPrice = Math.floor(sellPrice * luckMultiplier);
         const item = document.createElement('div');
         item.className = 'shop-item';
         item.innerHTML = '<h4>' + data.mineral.name + ' x' + data.count + '</h4><p>판매가: ' + sellPrice + 'G</p>';
         item.style.color = data.mineral.color;
         item.onclick = () => {
-            const index = inventory.findIndex(m => m.name === data.mineral.name);
-            if (index !== -1) {
-                inventory.splice(index, 1);
-                gold += sellPrice;
-                updateSellDisplay();
-            }
+            document.getElementById('sell-confirm-panel').classList.remove('hidden');
+            const confirmContent = document.getElementById('sell-confirm-content');
+            confirmContent.innerHTML = `
+                <div style="text-align: center;">
+                    <h3 style="color: ${data.mineral.color}; margin-bottom: 20px;">${data.mineral.name}</h3>
+                    <p style="margin: 10px 0;">보유 수량: ${data.count}개</p>
+                    <p style="margin: 10px 0;">희귀도: ${data.mineral.rarity}%</p>
+                    <p style="margin: 10px 0; font-size: 1.2em; color: #FFD700;">판매가: ${sellPrice}G</p>
+                    <button id="confirm-sell-btn" class="menu-btn" style="margin-top: 20px; width: 100%;">판매 확정</button>
+                </div>
+            `;
+            
+            document.getElementById('confirm-sell-btn').onclick = () => {
+                const index = inventory.findIndex(m => m.name === data.mineral.name);
+                if (index !== -1) {
+                    inventory.splice(index, 1);
+                    gold += sellPrice;
+                    stats.totalSold++;
+                    stats.totalGoldEarned += sellPrice;
+                    document.getElementById('sell-confirm-panel').classList.add('hidden');
+                    updateSellDisplay();
+                    if (!document.getElementById('inventory-panel').classList.contains('hidden')) {
+                        updateInventoryDisplay();
+                    }
+                    if (!document.getElementById('stats-panel').classList.contains('hidden')) {
+                        updateStatsDisplay();
+                    }
+                }
+            };
         };
         sellGrid.appendChild(item);
     }
@@ -464,3 +540,67 @@ document.getElementById('auto-pull-toggle').addEventListener('click', function()
         }
     }
 });
+
+document.getElementById('stats-btn').addEventListener('click', function() {
+    updateStatsDisplay();
+    document.getElementById('stats-panel').classList.remove('hidden');
+});
+
+document.getElementById('close-stats').addEventListener('click', function() {
+    document.getElementById('stats-panel').classList.add('hidden');
+});
+
+function updateStatsDisplay() {
+    const statsContent = document.getElementById('stats-content');
+    const days = Math.floor(stats.playTime / 86400);
+    const hours = Math.floor((stats.playTime % 86400) / 3600);
+    const minutes = Math.floor((stats.playTime % 3600) / 60);
+    const seconds = stats.playTime % 60;
+    
+    stats.luck = 100;
+    if (activeItems.some(item => item.name === '골드 부스터')) stats.luck += 25;
+    
+    stats.speed = 100;
+    if (activeItems.some(item => item.name === '시간 왜곡')) stats.speed += 25;
+    if (activeItems.some(item => item.name === '무하한')) stats.speed += 500;
+    
+    statsContent.innerHTML = `
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">플레이 시간</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${days}일 ${hours}시간 ${minutes}분 ${seconds}초</div>
+            </div>
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">총 돌린 수</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${stats.totalPulls}회</div>
+            </div>
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">뽑은 광석 수</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${stats.totalMinerals}개</div>
+            </div>
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">판 광석 수</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${stats.totalSold}개</div>
+            </div>
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">얻은 골드</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${stats.totalGoldEarned}G</div>
+            </div>
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">현재 LUCK</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${stats.luck} (${(stats.luck / 100).toFixed(2)}배)</div>
+            </div>
+            <div style="background: #2d2d30; padding: 15px; border-radius: 5px; border: 1px solid #3e3e42;">
+                <div style="color: #888; font-size: 0.9em;">현재 SPD</div>
+                <div style="color: #FFD700; font-size: 1.3em; margin-top: 5px;">${stats.speed} (${(stats.speed / 100).toFixed(2)}배)</div>
+            </div>
+        </div>
+    `;
+}
+
+setInterval(() => {
+    stats.playTime++;
+    if (!document.getElementById('stats-panel').classList.contains('hidden')) {
+        updateStatsDisplay();
+    }
+}, 1000);

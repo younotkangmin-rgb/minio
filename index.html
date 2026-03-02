@@ -16,21 +16,35 @@
             <div id="inventory-panel" class="inventory-panel hidden">
                 <button id="close-inventory" class="close-btn">CLOSE</button>
                 <h2>INVENTORY</h2>
+                <button id="inventory-sort-toggle" class="sort-btn">정렬: 희귀도 낮은순</button>
                 <div id="inventory-grid" class="inventory-grid"></div>
             </div>
             <div id="collection-panel" class="inventory-panel hidden">
                 <button id="close-collection" class="close-btn">CLOSE</button>
                 <h2>COLLECTION</h2>
                 <div style="font-size: 0.8em; color: #cccccc; margin-bottom: 10px; text-align: center;">
-                    <span style="color: #FF00FF;">■ 신화 (0.05%)</span> | 
-                    <span style="color: #FFD700;">■ 전설 (0.2%)</span> | 
-                    <span style="color: #9B59B6;">■ 영웅 (1%)</span> | 
-                    <span style="color: #3498DB;">■ 희귀 (3%)</span> | 
-                    <span style="color: #2ECC71;">■ 고급 (10%)</span> | 
-                    <span style="color: #95A5A6;">■ 일반</span>
+                    <span style="color: #000000; text-shadow: 0 0 2px #FFFFFF;">■ 유강민 (0.00000000000000001%)</span> | 
+                    <span style="color: #FFFFFF;">■ 창조 (0.0000001%)</span> | 
+                    <span style="color: #00FF00;">■ 영겁 (0.00001%)</span> | 
+                    <span style="color: #FF00FF;">■ 무현 (0.0000523%)</span> | 
+                    <span style="color: #FFFFFF;">■ 초월 (0.001%)</span> | 
+                    <span style="color: #FF1493;">■ 크로마틱 (0.006%)</span> | 
+                    <span style="color: #87CEEB;">■ 마스터 (0.01%)</span> | 
+                    <span style="color: #8B00FF;">■ 불멸 (0.1%)</span> | 
+                    <span style="color: #FF0000;">■ 신화 (0.8%)</span> | 
+                    <span style="color: #FFD700;">■ 전설 (3.125%)</span> | 
+                    <span style="color: #9B59B6;">■ 에픽 (6.25%)</span> | 
+                    <span style="color: #3498DB;">■ 고귀 (12.5%)</span> | 
+                    <span style="color: #2ECC71;">■ 희귀 (25%)</span> | 
+                    <span style="color: #95A5A6;">■ 일반 (50%)</span>
                 </div>
                 <button id="sort-toggle" class="sort-btn">정렬: 희귀도 낮은순</button>
                 <div id="collection-grid" class="inventory-grid"></div>
+            </div>
+            <div id="stats-panel" class="inventory-panel hidden">
+                <button id="close-stats" class="close-btn">CLOSE</button>
+                <h2>STATS</h2>
+                <div id="stats-content" style="padding: 20px; color: #cccccc; font-size: 1.1em;"></div>
             </div>
             <div id="shop-panel" class="inventory-panel hidden">
                 <button id="close-shop" class="close-btn">CLOSE</button>
@@ -45,6 +59,7 @@
         </div>
         <div class="side-menu">
             <button class="menu-btn" id="settings-btn">SETTINGS</button>
+            <button class="menu-btn" id="stats-btn">STATS</button>
             <button class="menu-btn" id="inventory-btn">INVENTORY</button>
             <button class="menu-btn" id="collection-btn">COLLECTION</button>
             <button class="menu-btn" id="sell-btn">SELL</button>

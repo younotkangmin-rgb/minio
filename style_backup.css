@@ -565,146 +565,204 @@ h1 {
     100% { --angle-chromatic: 360deg; }
 }
 
-
-.rarity-transcendence {
-    position: relative;
-    border: 3px solid;
-    border-image: linear-gradient(var(--angle-transcendence), #FFFFFF, #000000, #FFFFFF, #000000) 1;
-    border-radius: 5px;
-    box-shadow: 0 0 15px #FFFFFF, 0 0 10px #000000;
-    animation: transcendence-rotate 1s linear infinite;
+.rarity-chromatic::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to top, #FF1493, transparent);
+    animation: chromatic-aura-1 1.5s ease-out infinite;
 }
 
-@property --angle-transcendence {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
+.rarity-chromatic::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    width: 2px;
+    height: 0;
+    background: linear-gradient(to top, #FFD700, transparent);
+    animation: chromatic-aura-2 1.8s ease-out infinite 0.3s;
 }
 
-@keyframes transcendence-rotate {
-    0% { --angle-transcendence: 0deg; }
-    100% { --angle-transcendence: 360deg; }
+@keyframes chromatic-aura-1 {
+    0% {
+        height: 0;
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        height: 40px;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
 }
 
-.rarity-infinite {
-    position: relative;
-    border: 4px solid transparent;
-    background: linear-gradient(#2d2d30, #2d2d30) padding-box,
-                linear-gradient(var(--angle-infinite), 
-                    #FF0000, #FF7F00, #FFFF00, #00FF00, 
-                    #0000FF, #4B0082, #9400D3, #FF00FF,
-                    #FF0000) border-box;
-    border-radius: 5px;
+@keyframes chromatic-aura-2 {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        height: 35px;
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+}
+
+.rarity-chromatic {
+    overflow: visible;
+}
+
+.inventory-slot.rarity-chromatic::before {
+    left: 20% !important;
+    animation: chromatic-aura-1 1.2s ease-out infinite !important;
+}
+
+.inventory-slot.rarity-chromatic::after {
+    left: 70% !important;
+    animation: chromatic-aura-2 1.6s ease-out infinite 0.4s !important;
+}
+
+@keyframes chromatic-aura-3 {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        height: 38px;
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+}
+
+.inventory-slot.rarity-chromatic {
     box-shadow: 
-        0 0 10px rgba(255, 0, 255, 1),
-        0 0 20px rgba(255, 0, 255, 0.8),
-        0 0 30px rgba(255, 0, 255, 0.6),
-        inset 0 0 10px rgba(255, 255, 255, 0.3);
-    animation: infinite-rotate 0.8s linear infinite, infinite-pulse 2s ease-in-out infinite;
+        0 0 12px #FF1493, 
+        0 0 8px #FFD700,
+        10% -5px 0 2px #FF1493,
+        25% -8px 0 2px #FFD700,
+        40% -6px 0 2px #FF8C00,
+        55% -9px 0 2px #FFFFFF,
+        70% -7px 0 2px #FF1493,
+        85% -5px 0 2px #FFD700,
+        15% -12px 0 2px #FF8C00,
+        60% -11px 0 2px #FFFFFF,
+        35% -10px 0 2px #FF1493,
+        80% -13px 0 2px #FFD700;
+    animation: chromatic-multi-aura 2s ease-out infinite;
 }
 
-@property --angle-infinite {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes infinite-rotate {
-    0% { --angle-infinite: 0deg; }
-    100% { --angle-infinite: 360deg; }
-}
-
-@keyframes infinite-pulse {
+@keyframes chromatic-multi-aura {
     0%, 100% {
         box-shadow: 
-            0 0 10px rgba(255, 0, 255, 1),
-            0 0 20px rgba(255, 0, 255, 0.8),
-            0 0 30px rgba(255, 0, 255, 0.6),
-            inset 0 0 10px rgba(255, 255, 255, 0.3);
+            0 0 12px #FF1493, 
+            0 0 8px #FFD700,
+            10% -5px 0 1px transparent,
+            25% -8px 0 1px transparent,
+            40% -6px 0 1px transparent,
+            55% -9px 0 1px transparent,
+            70% -7px 0 1px transparent,
+            85% -5px 0 1px transparent,
+            15% -12px 0 1px transparent,
+            60% -11px 0 1px transparent,
+            35% -10px 0 1px transparent,
+            80% -13px 0 1px transparent;
+    }
+    20% {
+        box-shadow: 
+            0 0 12px #FF1493, 
+            0 0 8px #FFD700,
+            10% -15px 0 1px #FF1493,
+            25% -18px 0 1px #FFD700,
+            40% -16px 0 1px #FF8C00,
+            55% -19px 0 1px #FFFFFF,
+            70% -17px 0 1px #FF1493,
+            85% -15px 0 1px #FFD700,
+            15% -22px 0 1px #FF8C00,
+            60% -21px 0 1px #FFFFFF,
+            35% -20px 0 1px #FF1493,
+            80% -23px 0 1px #FFD700;
     }
     50% {
         box-shadow: 
-            0 0 15px rgba(255, 255, 0, 1),
-            0 0 30px rgba(255, 255, 0, 0.8),
-            0 0 45px rgba(255, 255, 0, 0.6),
-            inset 0 0 15px rgba(255, 255, 255, 0.5);
+            0 0 12px #FF1493, 
+            0 0 8px #FFD700,
+            10% -30px 0 1px transparent,
+            25% -33px 0 1px transparent,
+            40% -31px 0 1px transparent,
+            55% -34px 0 1px transparent,
+            70% -32px 0 1px transparent,
+            85% -30px 0 1px transparent,
+            15% -37px 0 1px transparent,
+            60% -36px 0 1px transparent,
+            35% -35px 0 1px transparent,
+            80% -38px 0 1px transparent;
     }
 }
 
-.rarity-eternity {
-    position: relative;
-    border: 4px solid;
-    border-image: linear-gradient(var(--angle-eternity), #00FF00, #000000, #7FFF00, #FFFF00) 1;
-    border-radius: 5px;
-    box-shadow: 0 0 15px #00FF00, 0 0 10px #FFFF00;
-    animation: eternity-rotate 0.6s linear infinite;
+.inventory-slot.rarity-chromatic::before {
+    box-shadow: 
+        10px 0 0 0 #FF1493,
+        20px 0 0 0 #FFD700,
+        30px 0 0 0 #FF8C00,
+        40px 0 0 0 #FFFFFF,
+        -10px 0 0 0 #FF1493,
+        -20px 0 0 0 #FFD700,
+        -30px 0 0 0 #FF8C00;
+    animation: chromatic-aura-multi-1 1.5s ease-out infinite !important;
 }
 
-@property --angle-eternity {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
+.inventory-slot.rarity-chromatic::after {
+    box-shadow: 
+        5px 0 0 0 #FFD700,
+        15px 0 0 0 #FF1493,
+        25px 0 0 0 #FFFFFF,
+        35px 0 0 0 #FF8C00,
+        -5px 0 0 0 #FFD700,
+        -15px 0 0 0 #FF1493,
+        -25px 0 0 0 #FFFFFF;
+    animation: chromatic-aura-multi-2 1.8s ease-out infinite 0.3s !important;
 }
 
-@keyframes eternity-rotate {
-    0% { --angle-eternity: 0deg; }
-    100% { --angle-eternity: 360deg; }
-}
-
-.rarity-creation {
-    position: relative;
-    border: 5px solid;
-    border-image: linear-gradient(var(--angle-creation), #FFFFFF, #808080, #FFFFFF, #808080) 1;
-    border-radius: 5px;
-    box-shadow: 0 0 20px #FFFFFF, 0 0 15px #808080, inset 0 0 15px rgba(255, 255, 255, 0.5);
-    animation: creation-rotate 0.4s linear infinite, creation-pulse 1.5s ease-in-out infinite;
-}
-
-@property --angle-creation {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes creation-rotate {
-    0% { --angle-creation: 0deg; }
-    100% { --angle-creation: 360deg; }
-}
-
-@keyframes creation-pulse {
-    0%, 100% {
-        box-shadow: 0 0 20px #FFFFFF, 0 0 15px #808080, inset 0 0 15px rgba(255, 255, 255, 0.5);
+@keyframes chromatic-aura-multi-1 {
+    0% {
+        height: 0;
+        opacity: 0;
+        transform: translateX(-50%);
     }
-    50% {
-        box-shadow: 0 0 30px #FFFFFF, 0 0 25px #808080, inset 0 0 25px rgba(255, 255, 255, 0.7);
+    20% {
+        opacity: 1;
+    }
+    100% {
+        height: 45px;
+        opacity: 0;
+        transform: translateX(-50%) translateY(-15px);
     }
 }
 
-.rarity-yukangmin {
-    position: relative;
-    border: 6px solid;
-    border-image: linear-gradient(var(--angle-yukangmin), #000000, #808080, #000000, #808080) 1;
-    border-radius: 5px;
-    box-shadow: 0 0 30px #000000, 0 0 20px #808080, inset 0 0 20px rgba(128, 128, 128, 0.8);
-    animation: yukangmin-rotate 0.2s linear infinite, yukangmin-pulse 1s ease-in-out infinite;
-}
-
-@property --angle-yukangmin {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-}
-
-@keyframes yukangmin-rotate {
-    0% { --angle-yukangmin: 0deg; }
-    100% { --angle-yukangmin: 360deg; }
-}
-
-@keyframes yukangmin-pulse {
-    0%, 100% {
-        box-shadow: 0 0 30px #000000, 0 0 20px #808080, inset 0 0 20px rgba(128, 128, 128, 0.8);
+@keyframes chromatic-aura-multi-2 {
+    0% {
+        height: 0;
+        opacity: 0;
     }
-    50% {
-        box-shadow: 0 0 50px #000000, 0 0 40px #808080, inset 0 0 30px rgba(128, 128, 128, 1);
+    20% {
+        opacity: 1;
+    }
+    100% {
+        height: 40px;
+        opacity: 0;
+        transform: translateY(-12px);
     }
 }
